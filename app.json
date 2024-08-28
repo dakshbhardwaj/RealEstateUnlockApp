@@ -2,6 +2,39 @@
   "expo": {
     "name": "RealEstateUnlockApp",
     "slug": "RealEstateUnlockApp",
-    "version": "1.0.0"
+    "version": "1.0.0",
+    "entryPoint": "./App.js",
+    "ios": {
+      "bundleIdentifier": "com.example.realestateunlockapp",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "This app uses your location to determine your proximity to homes so you can unlock them.",
+        "NSLocationAlwaysUsageDescription": "This app needs access to your location at all times to provide location-based features."
+      }
+    },
+    "android": {
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "VIBRATE",
+        "RECEIVE_BOOT_COMPLETED",
+        "WAKE_LOCK"
+      ],
+      "useNextNotificationsApi": true, 
+      "notification": {
+        "icon": "./assets/icon.png", 
+        "color": "#0000FF", 
+        "priority": "max",
+        "sound": true, 
+        "vibrationPattern": [0, 250, 250, 250] 
+      }
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow RealEstateUnlockApp  use your location."
+        }
+      ]
+    ] 
   }
 }
